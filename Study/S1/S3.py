@@ -42,7 +42,7 @@ def group_data():
 
 if __name__ == '__main__':
     data = pd.read_csv('json_data.csv', parse_dates=['createTime'])
-    # group_data()
+    group_data()
     # 胡同地区的薪资最大值，最小值，平均值
     data1 = data.groupby('district')['salary'].agg([max, min, np.mean])
     # 修改列名
