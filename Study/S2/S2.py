@@ -5,5 +5,7 @@ if __name__ == '__main__':
     df['日期'] = pd.to_datetime(df['日期'])
 
     # 日期筛选计算
-    df = df[(df['日期'] > '2023-01-01') & (df['日期'] < '2023-01-21')]
-    print(df)
+    df1 = df[(df['日期'] > '2023-01-01') & (df['日期'] < '2023-01-21')]
+    # 筛选指定日期数据
+    df2 = df.set_index('日期').truncate(after=pd.Timestamp('2023-01-02'))
+    print(df2)
